@@ -1,16 +1,61 @@
-import React from 'react'
+import React from 'react';
+import { Carousel } from 'antd';
+import Images from './Images';
+const contentStyle = {
 
-const Hero = () => {
-  return (
-   
-        <div class="image">
-   <h1 class="heading">Welcome to Our MSBD Labs</h1>
-   <p className="subtitle">Where Quality Healthcare Meets Compassion</p>
-   <p className="subtitle">Our hospital is dedicated to providing the highest quality medical care in a warm and welcoming environment. We understand that a trip to the hospital can be stressful, which is why we work hard to make sure our patients feel comfortable and well taken care of from the moment they walk through our doors.</p>
-   <p><button class="btn btn-large">Bout Us</button></p>
+  color: '#fff',
+  backgroundImage: `url(${Images.HeroBg})`,
+  minHeight:'100vh'
+ 
+  
+};
+
+const Hero = () => (
+  <Carousel >
+    <div >
+  <div className="hero" style={contentStyle} >
+    <img src={Images.medicin} alt="Hero Image" />
+    <div className="hero-text">
+      <h1>Welcome to Our Website</h1>
+      <p>Discover the latest trends, tips, and techniques in our industry</p>
+      <a href="#">Learn More</a>
+    </div>
+  </div>
 </div>
-    
-  )
-}
 
-export default Hero
+<div >
+  
+  <div className="hero" style={contentStyle} >
+    <img src={Images.aboutMedicine} alt="Hero Image" />
+    <div className="hero-text">
+      <h1>Welcome to Our Website</h1>
+      <p>Discover the latest trends, tips, and techniques in our industry</p>
+      <a href="#">Learn More</a>
+    </div>
+  </div>
+</div>
+    <div>
+    <div className="hero" style={contentStyle} >
+    
+    <img src={Images.medicin} alt="Hero Image" />
+    <div className="hero-text">
+      <h1>Welcome to Our Website</h1>
+      <p>Discover the latest trends, tips, and techniques in our industry</p>
+      <a href="#">Learn More</a>
+    </div>
+  </div>
+    </div>
+    <div>
+    <div className="hero" style={contentStyle} >
+    <img src={Images.medicines} alt="Hero Image" />
+    <div className="hero-text">
+      <h1>Welcome to Our Website</h1>
+      <p>Discover the latest trends, tips, and techniques in our industry</p>
+      <a href="#">Learn More</a>
+    </div>
+  </div>
+    </div>
+  </Carousel>
+);
+
+export default Hero;
