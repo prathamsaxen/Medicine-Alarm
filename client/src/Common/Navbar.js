@@ -19,20 +19,20 @@ import Images from './Images';
 
 
 const drawerWidth = 240;
-const navItems = [
-  {
-  navName:'Home',
-  navLink:'/'
-},
-  {
-  navName:'About',
-  navLink:'/about'
-},
-  {
-  navName:'Contact',
-  navLink:'/contact'
-},
-  ];
+// const navItems = [
+//   {
+//   navName:'Home',
+//   navLink:'/'
+// },
+//   {
+//   navName:'About',
+//   navLink:'/about'
+// },
+//   {
+//   navName:'Contact',
+//   navLink:'/contact'
+// },
+//   ];
 
 function Navbar(props) {
   const { window } = props;
@@ -49,13 +49,23 @@ function Navbar(props) {
       </Typography>
       <Divider />
       <List>
-        {navItems.map((item) => (
-          <ListItem key={item} disablePadding>
+        
+          <ListItem  disablePadding>
             <ListItemButton sx={{ textAlign: 'center' }}>
-              <ListItemText primary={item.navName} />
+              <ListItemText primary="home" />
             </ListItemButton>
           </ListItem>
-        ))}
+          <ListItem  disablePadding>
+            <ListItemButton sx={{ textAlign: 'center' }}>
+              <ListItemText primary="about" />
+            </ListItemButton>
+          </ListItem>
+          <ListItem  disablePadding>
+            <ListItemButton sx={{ textAlign: 'center' }}>
+              <ListItemText primary="contact" />
+            </ListItemButton>
+          </ListItem>
+      
       </List>
     </Box>
   );
@@ -85,13 +95,30 @@ function Navbar(props) {
            <img src={Images.logo} style={{height:'35px',width:'auto'}} alt="" />
           </Typography>
           <Box sx={{ display: { xs: 'none', sm: 'block' } }}>
-            {navItems.map((item) => (
-              <NavLink to={item.navLink} style={{ textDecoration:'none'}}>
-              <Button key={item} sx={{ color: '#fff', }}>
-             {item.navName}  
+           
+          <NavLink style={{ textDecoration:'none'}} to='/'>
+              <Button  onClick={()=>{
+                console.log('hii')
+              }} sx={{ color: '#fff', }}>
+              Home
               </Button>
-              </NavLink> 
-            ))}
+              </NavLink>
+             
+              
+              <Button  onClick={()=>{
+                console.log('about')
+              }} sx={{ color: '#fff', }}>
+              About
+              </Button>
+             
+             
+              <Button   onClick={()=>{
+                console.log('contact')
+              }} sx={{ color: '#fff', }}>
+              Contact
+              </Button>
+           
+         
           <NavLink style={{ textDecoration:'none'}} to='/login'>  <Button sx={{background:"#eee",color:'black',margin:"0px 2px"}} >LogIn </Button></NavLink>
           <NavLink style={{ textDecoration:'none'}} to='/signup'>  <Button sx={{background:"black",color:'#eee',margin:"0px 2px"}}>SignUp</Button></NavLink>
           </Box>
@@ -127,4 +154,4 @@ Navbar.propTypes = {
   window: PropTypes.func,
 };
 
-export default Navbar;
+export default Navbar;
