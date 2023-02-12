@@ -7,7 +7,6 @@ import NoPage from './Components/NoPage';
 import Footer from './Common/Footer';
 import Login from './Components/Login';
 import SIgnUp from './Components/SIgnUp';
-
 function App() {
   return ( <div className="App">
     <Navbar/>

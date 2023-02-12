@@ -2,7 +2,7 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import Person3Icon from '@mui/icons-material/Person3';
 import LocalPhoneIcon from '@mui/icons-material/LocalPhone';
-import FmdGoodIcon from '@mui/icons-material/FmdGood';
+// import FmdGoodIcon from '@mui/icons-material/FmdGood';
 import LockIcon from '@mui/icons-material/Lock';
 const SIgnUp = () => {
   return (

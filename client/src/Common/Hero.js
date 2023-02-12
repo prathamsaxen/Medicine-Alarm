@@ -5,13 +5,14 @@ const contentStyle = {
 
   color: '#fff',
   background: "#1b7278",
-  minHeight:'fit-content'
+  minHeight:'94vh',
+  height:'max-content'
  
   
 };
 
 const Hero = (props) => (
-  <Carousel  className={props.className}>
+  <Carousel  className={props.className} id="caraouselStart">
     <div  >
   <div className="hero row" style={contentStyle} >
     <div className="col-md-6">

@@ -1,6 +1,6 @@
 import React from 'react'
 import '../Card.css'
-import MedicationLiquidIcon from '@mui/icons-material/MedicationLiquid';
+// import MedicationLiquidIcon from '@mui/icons-material/MedicationLiquid';
 
 const Card = (props) => {
   return (
@@ -16,7 +16,7 @@ const Card = (props) => {
       <p>
         {props.text}
       </p>
-      <a className="btn-link">Read More...</a>
+      <a className="btn-link" href='/'>Read More...</a>
     </div>
   </div>
 </div>
