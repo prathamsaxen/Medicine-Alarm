@@ -3,7 +3,7 @@ import Images from '../Common/Images'
 import '../Form.css'
 const Contact = () => {
   return (
-    <div>
+    <div id='ContactPage'>
       <section className="contact pb-2" style={{paddingTop:'70px' ,background:`url(${Images.contactBG})`,backgroundSize:'cover',backgroundRepeat:'no-repeat',position:'relative',minHeight:'95vh'}}>
         
         <div className="container">
@@ -43,10 +43,9 @@ const Contact = () => {
 
            
           </div>
-        </div>
-      </section>
-      
       </div>
+  </section>
+</div>
   )
 }
 

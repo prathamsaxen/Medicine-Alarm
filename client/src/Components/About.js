@@ -2,7 +2,7 @@ import React from 'react'
 import Images from '../Common/Images'
 const About = (props) => {
   return (
-    <div className={props.className}>
+    <div className={props.className} id="AboutPage">
     
     <section id="about" className="py-5">
   <div className="container">

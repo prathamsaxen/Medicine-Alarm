@@ -7,7 +7,7 @@ const Home = () => {
 
 
   return (
-    <div>
+    <div id='HomePage'>
       
         <Hero className="section-padding"/>
         <About/>
