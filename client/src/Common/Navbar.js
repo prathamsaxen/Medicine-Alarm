@@ -97,15 +97,25 @@ function Navbar(props) {
           <Box sx={{ display: { xs: 'none', sm: 'block' } }}>
            
           <NavLink style={{ textDecoration:'none'}} to='/'>
-              <a href="#HomePage" sx={{ color: '#fff'}}>
+          <a href='#HomePage' sx={{ color: '#fff',textDecoration:'none' }}>
+                <Button sx={{color:'white'}}>
               Home
-              </a>
+              </Button>
+             </a>
               </NavLink>
-              <a href='#AboutPage' sx={{ color: '#fff', }}>
+              <a href='#AboutPage' sx={{ color: '#fff',textDecoration:'none' }}>
+              <Button sx={{color:'white'}}>
+             
               About
+            
+              </Button>
               </a>
-             <a  href='#ContactPage' sx={{ color: '#fff', }}>
+              <a  href='#ContactPage' sx={{ color: '#fff',textDecoration:'none' }}>
+              <Button sx={{color:'white'}}>
+        
               Contact
+             
+              </Button>
               </a>
            
          
