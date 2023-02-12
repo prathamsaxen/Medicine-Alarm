@@ -4,19 +4,24 @@ import Person3Icon from "@mui/icons-material/Person3";
 import LocalPhoneIcon from "@mui/icons-material/LocalPhone";
 import FmdGoodIcon from "@mui/icons-material/FmdGood";
 import LockIcon from "@mui/icons-material/Lock";
+import { useState } from "react";
+import axios from "axios";
+
 const SIgnUp = () => {
   const [user, setUser] = useState({
     name: "",
     email: "",
     password: "",
+    phone: "",
+    address: "",
   });
 
   const handleChange = (e) => {
     const { name, value } = e.target;
-    setUser({
-      ...user,
+    setUser((prevUser) => ({
+      ...prevUser,
       [name]: value,
-    });
+    }));
   };
 
   const register = () => {

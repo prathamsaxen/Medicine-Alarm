@@ -6,10 +6,7 @@ import Footer from "./Common/Footer";
 import Login from "./Components/Login";
 import SIgnUp from "./Components/SIgnUp";
 import { Routes, Route } from "react-router-dom";
-import NoPage from "./Components/NoPage";
-import Footer from "./Common/Footer";
-import Login from "./Components/Login";
-import SIgnUp from "./Components/SIgnUp";
+import { useState } from "react";
 
 function App() {
   const [user, setLoginUser] = useState({});
