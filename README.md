@@ -24,7 +24,7 @@ To deploy this project run
 
 **Client:** React, Javascript, ES6+ etc
 
-**Server:** Node, Express
+**Server:** Node, Express,Mongo DB,etc
 
 
 ## License

@@ -1,10 +1,9 @@
-import React, { useState } from "react";
+import React from "react";
 import { Link } from "react-router-dom";
 import Person3Icon from "@mui/icons-material/Person3";
 import LocalPhoneIcon from "@mui/icons-material/LocalPhone";
 import FmdGoodIcon from "@mui/icons-material/FmdGood";
-import axios from "axios";
-
+import LockIcon from "@mui/icons-material/Lock";
 const SIgnUp = () => {
   const [user, setUser] = useState({
     name: "",

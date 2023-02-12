@@ -43,26 +43,26 @@ function Navbar(props) {
   };
 
   const drawer = (
-    <Box onClick={handleDrawerToggle} sx={{ textAlign: 'center',height:'max' }}>
-      <Typography variant="h6" sx={{ my: 2 }}>
-        MUI
+    <Box onClick={handleDrawerToggle} sx={{ textAlign: 'center',height:'max',background:'#0d373a' }}>
+      <Typography variant="h6" sx={{ my: 2 ,background:""}}>
+        <img src={Images.logo} style={{height:'35px',width:'auto'}} alt="" />
       </Typography>
       <Divider />
       <List>
         
           <ListItem  disablePadding>
             <ListItemButton sx={{ textAlign: 'center' }}>
-              <ListItemText primary="home" />
+             <a href="#HomePage" style={{textAlign:'center'}}> <ListItemText sx={{textAlign:'center',color:'#fff'}} primary="HOME" /></a>
             </ListItemButton>
           </ListItem>
           <ListItem  disablePadding>
             <ListItemButton sx={{ textAlign: 'center' }}>
-              <ListItemText primary="about" />
+            <a href="#AboutPage" >   <ListItemText sx={{textAlign:'center',color:'#fff'}} primary="ABOUT" /></a>
             </ListItemButton>
           </ListItem>
           <ListItem  disablePadding>
             <ListItemButton sx={{ textAlign: 'center' }}>
-              <ListItemText primary="contact" />
+            <a href="#ContactPage">    <ListItemText sx={{textAlign:'center',color:'#fff'}} primary="CONTACT" /></a>
             </ListItemButton>
           </ListItem>
       

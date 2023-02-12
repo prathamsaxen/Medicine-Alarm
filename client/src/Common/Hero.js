@@ -5,13 +5,14 @@ const contentStyle = {
 
   color: '#fff',
   background: "#1b7278",
-  minHeight:'fit-content'
+  minHeight:'94vh',
+  height:'max-content'
  
   
 };
 
 const Hero = (props) => (
-  <Carousel  className={props.className}>
+  <Carousel  className={props.className} id="caraouselStart">
     <div  >
   <div className="hero row" style={contentStyle} >
     <div className="col-md-6">
@@ -19,8 +20,8 @@ const Hero = (props) => (
     </div>
     <div className="col-md-6">
     <div className="hero-text">
-      <h1>Welcome to Our Website</h1>
-      <p>Discover the latest trends, tips, and techniques in our industry</p>
+      <h1>Welcome to Medicine Alarm</h1>
+      <p>Enter your Medicine and get time to time notifications for medicines dose</p>
       <button >Learn More</button>
     </div>
     </div>
