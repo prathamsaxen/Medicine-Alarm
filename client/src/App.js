@@ -5,7 +5,7 @@ import NoPage from "./Components/NoPage";
 import Footer from "./Common/Footer";
 import Login from "./Components/Login";
 import SIgnUp from "./Components/SIgnUp";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
 import { useState } from "react";
 
 function App() {
@@ -13,21 +13,12 @@ function App() {
   return (
     <div className="App">
       <Navbar />
-      <Router>
-        <Routes>
-          <Route exact path="/">
-            {user && user._id ? <Home /> : <Login />}
-            <Home />
-          </Route>
-          <Route path="/login">
-            <Login setLoginUser={setLoginUser} />
-          </Route>
-          <Route path="/signup">
-            <SIgnUp />
-          </Route>
-          <Route path="*" element={<NoPage />} />
-        </Routes>
-      </Router>
+      <Routes>
+        <Route path="/" element={user && user._id ? <Home /> : <Login />} />
+        <Route path="/login" element={<Login setLoginUser={setLoginUser} />} />
+        <Route path="/signup" element={<SIgnUp />} />
+        <Route path="*" element={<NoPage />} />
+      </Routes>
       <Footer />
     </div>
   );
