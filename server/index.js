@@ -3,6 +3,7 @@ const cors = require("cors");
 const mongoose = require("mongoose");
 const cron = require("node-cron");
 const twilio = require("twilio");
+const path = require("path");
 
 const app = express();
 app.use(express.json());
@@ -82,6 +83,13 @@ app.post("/schedule-message", (req, res) => {
   });
 
   res.send("Message scheduled");
+});
+
+// Serve static files for the frontend
+app.use(express.static(path.join(__dirname, "../client/build")));
+
+app.get("*", (req, res) => {
+  res.sendFile(path.join(__dirname, "../client/build/index.html"));
 });
 
 app.listen(6969, () => {
