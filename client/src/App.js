@@ -5,7 +5,7 @@ import NoPage from "./Components/NoPage";
 import Footer from "./Common/Footer";
 import Login from "./Components/Login";
 import SIgnUp from "./Components/SIgnUp";
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { useState } from "react";
 
 function App() {
@@ -14,7 +14,7 @@ function App() {
     <div className="App">
       <Navbar />
       <Router>
-        <Switch>
+        <Routes>
           <Route exact path="/">
             {user && user._id ? <Home /> : <Login />}
             <Home />
@@ -26,7 +26,7 @@ function App() {
             <SIgnUp />
           </Route>
           <Route path="*" element={<NoPage />} />
-        </Switch>
+        </Routes>
       </Router>
       <Footer />
     </div>

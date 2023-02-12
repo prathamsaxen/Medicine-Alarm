@@ -1,8 +1,9 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import Person3Icon from "@mui/icons-material/Person3";
 import LocalPhoneIcon from "@mui/icons-material/LocalPhone";
 import FmdGoodIcon from "@mui/icons-material/FmdGood";
+import axios from "axios";
 
 const SIgnUp = () => {
   const [user, setUser] = useState({
@@ -14,14 +15,14 @@ const SIgnUp = () => {
   const handleChange = (e) => {
     const { name, value } = e.target;
     setUser({
-      ...user, //spread operator
+      ...user,
       [name]: value,
     });
   };
 
   const register = () => {
-    const { name, email, password } = user;
-    if (name && email && password) {
+    const { name, email, password, phone, address } = user;
+    if (name && email && password && phone && address) {
       axios
         .post("http://localhost:6969/signup", user)
         .then((res) => console.log(res));
@@ -51,20 +52,49 @@ const SIgnUp = () => {
             placeholder="Email"
             className="input-field"
             type="email"
+            value={user.email}
+            onChange={handleChange}
           />
         </div>
         <div className="field">
           <Person3Icon />
-
-          <input placeholder="Name" className="input-field" type="text" />
+          <input
+            placeholder="Name"
+            className="input-field"
+            type="text"
+            value={user.name}
+            onChange={handleChange}
+          />
         </div>
         <div className="field">
           <LocalPhoneIcon />
-          <input placeholder="Phone" className="input-field" type="text" />
+          <input
+            placeholder="Phone"
+            className="input-field"
+            type="text"
+            value={user.phone}
+            onChange={handleChange}
+          />
         </div>
         <div className="field">
           <FmdGoodIcon />
-          <input placeholder="Adress" className="input-field" type="text" />
+          <input
+            placeholder="Address"
+            className="input-field"
+            type="text"
+            value={user.address}
+            onChange={handleChange}
+          />
+        </div>
+        <div className="field">
+          <FmdGoodIcon />
+          <input
+            placeholder="Password"
+            className="input-field"
+            type="text"
+            value={user.password}
+            onChange={handleChange}
+          />
         </div>
         <div className="btn">
           <Link to="/login">
@@ -75,10 +105,14 @@ const SIgnUp = () => {
           </Link>
           <Link to="/signup">
             {" "}
-            <button className="button2">Sign Up</button>
+            <button className="button2" onClick={register}>
+              Sign Up
+            </button>
           </Link>
         </div>
       </form>
     </div>
   );
 };
+
+export default SIgnUp;

@@ -4,13 +4,12 @@ import { NavLink } from "react-router-dom";
 import LockIcon from "@mui/icons-material/Lock";
 import axios from "axios";
 import { useState } from "react";
-import { useHistory } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 const Login = ({ setLoginUser }) => {
-  const history = useHistory();
+  const navigate = useNavigate();
   const [user, setUser] = useState({
     name: "",
-
     password: "",
   });
 
@@ -26,7 +25,7 @@ const Login = ({ setLoginUser }) => {
     axios.post("http://localhost:6969/login", user).then((res) => {
       alert(res.data.message);
       setLoginUser(res.data.user);
-      history.push("/");
+      navigate("/");
     });
   };
 
@@ -77,7 +76,7 @@ const Login = ({ setLoginUser }) => {
           </NavLink>
           <NavLink to="/signup">
             {" "}
-            <button className="button2" onClick={history.push("/Register")}>
+            <button className="button2" onClick={navigate("/signup")}>
               Sign Up
             </button>
           </NavLink>
