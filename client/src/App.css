@@ -43,21 +43,22 @@
 .hero {
   display: flex;
   align-items: center;
-  height: 500px;
+  
   background-color: #f2f2f2;
 }
 
 .hero img {
-  width: 50%;
-  height: 100%;
-  object-fit: contain;
+  aspect-ratio: 1/1;
+  height: auto;
+  object-position: left;
+  width: 100%;
 }
 
 .hero-text {
-  width: 50%;
+  
   padding: 0 50px;
   text-align: center;
-  color: #333;
+  color: #fff;
 }
 
 .hero-text h1 {
@@ -71,18 +72,20 @@
   margin-bottom: 40px;
 }
 
-.hero-text a {
+.hero-text button {
   display: inline-block;
-  padding: 15px 30px;
+  padding: 9px 30px;
   background-color: #232325;
   color: #fff;
   border-radius: 25px;
+  outline: none;
   text-decoration: none;
   font-weight: bold;
   transition: all 0.2s ease-in-out;
+  border: none;
 }
 
-.hero-text a:hover {
+.hero-text button:hover {
   background-color: #fff;
   color: #333;
   cursor: pointer;
