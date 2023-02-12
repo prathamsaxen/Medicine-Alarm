@@ -15,33 +15,24 @@ const SIgnUp = () => {
     phone: "",
     address: "",
   });
-const [mailId,setMailID]=useState("");
-const[name,setName]=useState("");
-const[phoneNumber,setPhoneNumber]=useState("");
-const[address,setAddress]=useState("");
-const[psswrd,setpsswrd]=useState("");
-  const handleChange =(event)=>{
-      if(event.target.id==="email-input")
-      {
-        setMailID(event.target.value);
-      }
-      else if(event.target.id==="name-input")
-      {
-        setName(event.target.value);
-      }
-      else if(event.target.id==="phone-input")
-      {
-        setPhoneNumber(event.target.value);
-      }
-      else if(event.target.id==="Address-input")
-      {
-        setAddress(event.target.value);
-      }
-      else if(event.target.id==="password-input")
-      {
-        setpsswrd(event.target.value);
-      }
-  }
+  const [mailId, setMailID] = useState("");
+  const [name, setName] = useState("");
+  const [phoneNumber, setPhoneNumber] = useState("");
+  const [address, setAddress] = useState("");
+  const [psswrd, setpsswrd] = useState("");
+  const handleChange = (event) => {
+    if (event.target.id === "email-input") {
+      setMailID(event.target.value);
+    } else if (event.target.id === "name-input") {
+      setName(event.target.value);
+    } else if (event.target.id === "phone-input") {
+      setPhoneNumber(event.target.value);
+    } else if (event.target.id === "Address-input") {
+      setAddress(event.target.value);
+    } else if (event.target.id === "password-input") {
+      setpsswrd(event.target.value);
+    }
+  };
 
   const register = () => {
     const { name, email, password, phone, address } = user;
