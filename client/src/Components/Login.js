@@ -1,7 +1,6 @@
 import React from 'react'
 import '../Form.css'
-import Images from '../Common/Images'
-import {NavLink,Link} from 'react-router-dom'
+import {NavLink} from 'react-router-dom'
 import LockIcon from '@mui/icons-material/Lock';
 
 const Login = () => {
@@ -18,8 +17,8 @@ const Login = () => {
     <input placeholder="Password" className="input-field" type="password" />
   </div>
   <div className="btn">
-  <Link to='/login'>   <button className="button1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Login&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</button> </Link>
-   <Link to='/signup'> <button className="button2">Sign Up</button></Link>
+  <NavLink to='/login'>   <button className="button1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Login&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</button> </NavLink>
+   <NavLink to='/signup'> <button className="button2">Sign Up</button></NavLink>
   </div>
   <button className="button3">Forgot Password</button>
 </form>

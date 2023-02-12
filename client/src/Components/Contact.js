@@ -1,5 +1,4 @@
 import React from 'react'
-import Navbar from '../Common/Navbar'
 import Images from '../Common/Images'
 import '../Form.css'
 const Contact = () => {
@@ -34,7 +33,7 @@ const Contact = () => {
       <label>Doctor Name</label>
     </div>
     <center>
-      <a href="#">
+      <a href="/">
         SEND
         <span />
       </a></center>

@@ -14,11 +14,11 @@ const Hero = (props) => (
   <Carousel  className={props.className}>
     <div  >
   <div className="hero" style={contentStyle} >
-    <img src={Images.medicin} alt="Hero Image" />
+    <img src={Images.medicin} alt="Hero" />
     <div className="hero-text">
       <h1>Welcome to Our Website</h1>
       <p>Discover the latest trends, tips, and techniques in our industry</p>
-      <a href="#">Learn More</a>
+      <button >Learn More</button>
     </div>
   </div>
 </div>
@@ -26,32 +26,32 @@ const Hero = (props) => (
 <div >
   
   <div className="hero" style={contentStyle} >
-    <img src={Images.aboutMedicine} alt="Hero Image" />
+    <img src={Images.aboutMedicine} alt="Hero" />
     <div className="hero-text">
       <h1>Welcome to Our Website</h1>
       <p>Discover the latest trends, tips, and techniques in our industry</p>
-      <a href="#">Learn More</a>
+      <button>Learn More</button>
     </div>
   </div>
 </div>
     <div>
     <div className="hero" style={contentStyle} >
     
-    <img src={Images.medicin} alt="Hero Image" />
+    <img src={Images.medicin} alt="Hero" />
     <div className="hero-text">
       <h1>Welcome to Our Website</h1>
       <p>Discover the latest trends, tips, and techniques in our industry</p>
-      <a href="#">Learn More</a>
+      <button>Learn More</button>
     </div>
   </div>
     </div>
     <div>
     <div className="hero" style={contentStyle} >
-    <img src={Images.medicines} alt="Hero Image" />
+    <img src={Images.medicines} alt="Hero" />
     <div className="hero-text">
       <h1>Welcome to Our Website</h1>
       <p>Discover the latest trends, tips, and techniques in our industry</p>
-      <a href="#">Learn More</a>
+      <button>Learn More</button>
     </div>
   </div>
     </div>

@@ -1,4 +1,4 @@
-import React from 'react'
+
 
 const Images ={
     HeroBg: require("../images/hero-bg.jpg"),

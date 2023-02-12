@@ -19,6 +19,7 @@ function App() {
       <Route path="/about" element={<About/>}/>
       <Route path="/login" element={<Login/>}/>
       <Route path="/signup" element={<SIgnUp/>}/>
+      <Route path="*" element={<NoPage />} />
     </Routes>
     <Footer/>
   </div>
