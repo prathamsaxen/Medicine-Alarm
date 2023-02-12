@@ -1,24 +1,35 @@
-
-import './App.css';
-import Navbar from './Common/Navbar';
-import Home from './Components/Home';
-import { Routes, Route } from "react-router-dom";
-import NoPage from './Components/NoPage';
-import Footer from './Common/Footer';
-import Login from './Components/Login';
-import SIgnUp from './Components/SIgnUp';
+import "./App.css";
+import Navbar from "./Common/Navbar";
+import Home from "./Components/Home";
+import NoPage from "./Components/NoPage";
+import Footer from "./Common/Footer";
+import Login from "./Components/Login";
+import SIgnUp from "./Components/SIgnUp";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import { useState } from "react";
 
 function App() {
-  return ( <div className="App">
-    <Navbar/>
-    <Routes>
-      <Route path="/" element={<Home/>}/>
-      <Route path="/login" element={<Login/>}/>
-      <Route path="/signup" element={<SIgnUp/>}/>
-      <Route path="*" element={<NoPage />} />
-    </Routes>
-    <Footer/>
-  </div>
+  const [user, setLoginUser] = useState({});
+  return (
+    <div className="App">
+      <Navbar />
+      <Router>
+        <Switch>
+          <Route exact path="/">
+            {user && user._id ? <Home /> : <Login />}
+            <Home />
+          </Route>
+          <Route path="/login">
+            <Login setLoginUser={setLoginUser} />
+          </Route>
+          <Route path="/signup">
+            <SIgnUp />
+          </Route>
+          <Route path="*" element={<NoPage />} />
+        </Switch>
+      </Router>
+      <Footer />
+    </div>
   );
 }
 

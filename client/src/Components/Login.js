@@ -1,30 +1,91 @@
-import React from 'react'
-import '../Form.css'
-import {NavLink} from 'react-router-dom'
-import LockIcon from '@mui/icons-material/Lock';
+import React from "react";
+import "../Form.css";
+import { NavLink } from "react-router-dom";
+import LockIcon from "@mui/icons-material/Lock";
+import axios from "axios";
+import { useState } from "react";
+import { useHistory } from "react-router-dom";
 
-const Login = () => {
+const Login = ({ setLoginUser }) => {
+  const history = useHistory();
+  const [user, setUser] = useState({
+    name: "",
+
+    password: "",
+  });
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setUser({
+      ...user,
+      [name]: value,
+    });
+  };
+
+  const login = () => {
+    axios.post("http://localhost:6969/login", user).then((res) => {
+      alert(res.data.message);
+      setLoginUser(res.data.user);
+      history.push("/");
+    });
+  };
+
   return (
-    <div style={{paddingTop:'70px',background:'#1b7278',minHeight:'100vh',position:'relative',display:'flex',flexDirection:'row',alignItems:'center',justifyContent:'center'}}>
-       <form className="Login-form">
-  <p id="heading">Login</p>
-  <div className="field">
-    @
-    <input autoComplete="off" placeholder="Username" className="input-field" type="text" />
-  </div>
-  <div className="field">
-    <LockIcon/>
-    <input placeholder="Password" className="input-field" type="password" />
-  </div>
-  <div className="btn">
-  <NavLink to='/login'>   <button className="button1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Login&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</button> </NavLink>
-   <NavLink to='/signup'> <button className="button2">Sign Up</button></NavLink>
-  </div>
-  <button className="button3">Forgot Password</button>
-</form>
-
+    <div
+      style={{
+        paddingTop: "70px",
+        background: "#1b7278",
+        minHeight: "100vh",
+        position: "relative",
+        display: "flex",
+        flexDirection: "row",
+        alignItems: "center",
+        justifyContent: "center",
+      }}
+    >
+      <form className="Login-form">
+        <p id="heading">Login</p>
+        <div className="field">
+          @
+          <input
+            autoComplete="off"
+            placeholder="Email"
+            className="input-field"
+            type="text"
+            name="email"
+            value={user.email}
+            onChange={handleChange}
+          />
+        </div>
+        <div className="field">
+          <LockIcon />
+          <input
+            placeholder="Password"
+            className="input-field"
+            type="password"
+            name="password"
+            value={user.password}
+            onChange={handleChange}
+          />
+        </div>
+        <div className="btn">
+          <NavLink to="/login">
+            {" "}
+            <button className="button1" onClick={login}>
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Login&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            </button>{" "}
+          </NavLink>
+          <NavLink to="/signup">
+            {" "}
+            <button className="button2" onClick={history.push("/Register")}>
+              Sign Up
+            </button>
+          </NavLink>
+        </div>
+        <button className="button3">Forgot Password</button>
+      </form>
     </div>
-  )
-}
+  );
+};
 
-export default Login
+export default Login;
