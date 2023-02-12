@@ -10,9 +10,9 @@ const contentStyle = {
   
 };
 
-const Hero = () => (
-  <Carousel >
-    <div >
+const Hero = (props) => (
+  <Carousel  className={props.className}>
+    <div  >
   <div className="hero" style={contentStyle} >
     <img src={Images.medicin} alt="Hero Image" />
     <div className="hero-text">

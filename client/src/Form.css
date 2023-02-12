@@ -60,13 +60,13 @@
   }
   
   .login-box a:hover {
-    background: #11e6f4;
+    background: #1b7278;
     color: #fff;
     border-radius: 5px;
-    box-shadow: 0 0 5px #11e6f4,
-                0 0 25px #11e6f4,
-                0 0 50px #11e6f4,
-                0 0 100px #11e6f4;
+    box-shadow: 0 0 5px #1b7278,
+                0 0 25px #1b7278,
+                0 0 50px #1b7278,
+                0 0 100px #1b7278;
   }
   
   .login-box a span {
@@ -89,6 +89,124 @@
     left: -100%;
     width: 100%;
     height: 2px;
-    background: linear-gradient(90deg, transparent, #11e6f4);
+    background: linear-gradient(90deg, transparent, #1b7278);
     animation: btn-anim1 2s linear infinite;
+  }
+
+
+
+
+
+
+  .Login-form {
+    display: flex;
+    flex-direction: column;
+    max-width: 400px;
+  
+    gap: 10px;
+    padding-left: 2em;
+    padding-right: 2em;
+    padding-bottom: 0.4em;
+    background-color: #171717;
+    border-radius: 25px;
+    transition: .4s ease-in-out;
+  }
+  
+  .Login-form:hover {
+    transform: scale(1.05);
+    border: 1px solid black;
+  }
+  
+  .Login-form #heading {
+    text-align: center;
+    margin: 2em;
+    color: rgb(255, 255, 255);
+    font-size: 1.2em;
+  }
+  
+  .Login-form .field {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5em;
+    
+    border-radius: 25px;
+    padding: 0.6em;
+    border: none;
+    outline: none;
+    color: white;
+    background-color: #171717;
+    box-shadow: inset 2px 5px 10px rgb(5, 5, 5);
+  }
+  
+  .Login-form .input-icon {
+    height: 1.3em;
+    width: 1.3em;
+    fill: white;
+  }
+  
+  .Login-form .input-field {
+    background: none;
+    border: none;
+    outline: none;
+    width: 100%;
+    color: #d3d3d3;
+  }
+  
+  .Login-form .form .btn {
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    margin-top: 2.5em;
+  }
+  
+  .Login-form .button1 {
+    padding: 0.5em;
+    padding-left: 1.1em;
+    padding-right: 1.1em;
+    border-radius: 5px;
+    margin-right: 0.5em;
+    border: none;
+    outline: none;
+    transition: .4s ease-in-out;
+    background-color: #252525;
+    color: white;
+  }
+  
+  .Login-form .button1:hover {
+    background-color: black;
+    color: white;
+  }
+  
+  .Login-form .button2 {
+    padding: 0.5em;
+    padding-left: 2.3em;
+    padding-right: 2.3em;
+    border-radius: 5px;
+    border: none;
+    outline: none;
+    transition: .4s ease-in-out;
+    background-color: #252525;
+    color: white;
+  }
+  
+  .Login-form .button2:hover {
+    background-color: black;
+    color: white;
+  }
+  
+  .Login-form  .button3 {
+    margin-bottom: 3em;
+    padding: 0.5em;
+    border-radius: 5px;
+    border: none;
+    outline: none;
+    transition: .4s ease-in-out;
+    background-color: #252525;
+    color: white;
+  }
+  
+  .Login-form  .button3:hover {
+    background-color: #1b7278;
+    color: white;
   }

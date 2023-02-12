@@ -36,6 +36,10 @@
     transform: rotate(360deg);
   }
 }
+.section-padding{
+  padding-top: 65px;
+  background-color: #1b7278;
+}
 .hero {
   display: flex;
   align-items: center;

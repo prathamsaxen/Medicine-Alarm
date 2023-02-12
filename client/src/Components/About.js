@@ -1,9 +1,9 @@
 import React from 'react'
 import Navbar from '../Common/Navbar'
 import Images from '../Common/Images'
-const About = () => {
+const About = (props) => {
   return (
-    <div>
+    <div className={props.className}>
     
     <section id="about" className="py-5">
   <div className="container">

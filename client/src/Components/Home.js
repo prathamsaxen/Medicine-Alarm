@@ -8,7 +8,7 @@ const Home = () => {
   return (
     <div>
       
-        <Hero/>
+        <Hero className="section-padding"/>
         <About/>
         <Contact/>
       
