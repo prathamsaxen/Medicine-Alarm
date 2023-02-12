@@ -2,8 +2,8 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import Person3Icon from '@mui/icons-material/Person3';
 import LocalPhoneIcon from '@mui/icons-material/LocalPhone';
-import FmdGoodIcon from '@mui/icons-material/FmdGood';;
-
+import FmdGoodIcon from '@mui/icons-material/FmdGood';
+import LockIcon from '@mui/icons-material/Lock';
 const SIgnUp = () => {
   return (
     <div style={{paddingTop:'70px',background:'#1b7278',minHeight:'100vh',position:'relative',display:'flex',flexDirection:'row',alignItems:'center',justifyContent:'center'}}>
@@ -23,8 +23,8 @@ const SIgnUp = () => {
  <input placeholder="Phone" className="input-field" type="text" />
 </div>
 <div className="field">
- <FmdGoodIcon/>
- <input placeholder="Adress" className="input-field" type="text" />
+<LockIcon/>
+ <input placeholder="Password" className="input-field" type="password" />
 </div>
 <div className="btn">
 <Link to='/login'>   <button className="button1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Login&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</button> </Link>

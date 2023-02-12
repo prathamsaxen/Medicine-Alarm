@@ -91,18 +91,19 @@ function Navbar(props) {
             variant="h6"
             component="div"
             sx={{ flexGrow: 1, display: { xs: 'none', sm: 'block' ,textAlign:'left'} }}
-          >
+          >  <NavLink style={{ textDecoration:'none'}} to='/'>
            <img src={Images.logo} style={{height:'35px',width:'auto'}} alt="" />
+           </NavLink>
           </Typography>
           <Box sx={{ display: { xs: 'none', sm: 'block' } }}>
            
-          <NavLink style={{ textDecoration:'none'}} to='/'>
+        
           <a href='#HomePage' sx={{ color: '#fff',textDecoration:'none' }}>
                 <Button sx={{color:'white'}}>
               Home
               </Button>
              </a>
-              </NavLink>
+            
               <a href='#AboutPage' sx={{ color: '#fff',textDecoration:'none' }}>
               <Button sx={{color:'white'}}>
              
