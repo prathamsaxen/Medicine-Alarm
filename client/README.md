@@ -29,7 +29,7 @@ To deploy this project run
 
 ## License
 
-[MIT](https://choosealicense.com/licenses/mit/)
+[MIT](https://github.com/er-pratham/Medicine-Alarm/blob/main/client/License.md)
 
 
 ## Features
