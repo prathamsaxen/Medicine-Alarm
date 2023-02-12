@@ -1,9 +1,8 @@
-import React, { useState } from "react";
+import React from "react";
 import { Link } from "react-router-dom";
 import Person3Icon from "@mui/icons-material/Person3";
 import LocalPhoneIcon from "@mui/icons-material/LocalPhone";
 import FmdGoodIcon from "@mui/icons-material/FmdGood";
-import axios from "axios";
 
 const SIgnUp = () => {
   const [user, setUser] = useState({
@@ -57,14 +56,7 @@ const SIgnUp = () => {
         <div className="field">
           <Person3Icon />
 
-          <input
-            placeholder="Name"
-            className="input-field"
-            type="text"
-            name="name"
-            value={user.name}
-            onChange={handleChange}
-          />
+          <input placeholder="Name" className="input-field" type="text" />
         </div>
         <div className="field">
           <LocalPhoneIcon />
@@ -72,7 +64,7 @@ const SIgnUp = () => {
         </div>
         <div className="field">
           <FmdGoodIcon />
-          <input placeholder="Address" className="input-field" type="text" />
+          <input placeholder="Adress" className="input-field" type="text" />
         </div>
         <div className="btn">
           <Link to="/login">
@@ -83,14 +75,10 @@ const SIgnUp = () => {
           </Link>
           <Link to="/signup">
             {" "}
-            <button className="button2" onClick={register}>
-              Sign Up
-            </button>
+            <button className="button2">Sign Up</button>
           </Link>
         </div>
       </form>
     </div>
   );
 };
-
-export default SIgnUp;
