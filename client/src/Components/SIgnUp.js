@@ -15,14 +15,33 @@ const SIgnUp = () => {
     phone: "",
     address: "",
   });
-
-  const handleChange = (e) => {
-    const { name, value } = e.target;
-    setUser((prevUser) => ({
-      ...prevUser,
-      [name]: value,
-    }));
-  };
+const [mailId,setMailID]=useState("");
+const[name,setName]=useState("");
+const[phoneNumber,setPhoneNumber]=useState("");
+const[address,setAddress]=useState("");
+const[psswrd,setpsswrd]=useState("");
+  const handleChange =(event)=>{
+      if(event.target.id==="email-input")
+      {
+        setMailID(event.target.value);
+      }
+      else if(event.target.id==="name-input")
+      {
+        setName(event.target.value);
+      }
+      else if(event.target.id==="phone-input")
+      {
+        setPhoneNumber(event.target.value);
+      }
+      else if(event.target.id==="Address-input")
+      {
+        setAddress(event.target.value);
+      }
+      else if(event.target.id==="password-input")
+      {
+        setpsswrd(event.target.value);
+      }
+  }
 
   const register = () => {
     const { name, email, password, phone, address } = user;
@@ -56,7 +75,8 @@ const SIgnUp = () => {
             placeholder="Email"
             className="input-field"
             type="email"
-            value={user.email}
+            id="email-input"
+            value={mailId}
             onChange={handleChange}
           />
         </div>
@@ -66,7 +86,8 @@ const SIgnUp = () => {
             placeholder="Name"
             className="input-field"
             type="text"
-            value={user.name}
+            id="name-input"
+            value={name}
             onChange={handleChange}
           />
         </div>
@@ -76,7 +97,8 @@ const SIgnUp = () => {
             placeholder="Phone"
             className="input-field"
             type="text"
-            value={user.phone}
+            id="phone-input"
+            value={phoneNumber}
             onChange={handleChange}
           />
         </div>
@@ -86,7 +108,8 @@ const SIgnUp = () => {
             placeholder="Address"
             className="input-field"
             type="text"
-            value={user.address}
+            id="Address-input"
+            value={address}
             onChange={handleChange}
           />
         </div>
@@ -96,7 +119,8 @@ const SIgnUp = () => {
             placeholder="Password"
             className="input-field"
             type="text"
-            value={user.password}
+            id="password-input"
+            value={psswrd}
             onChange={handleChange}
           />
         </div>
