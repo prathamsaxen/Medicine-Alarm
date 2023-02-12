@@ -57,7 +57,7 @@ function Navbar(props) {
       <List>
         <ListItem disablePadding>
           <ListItemButton sx={{ textAlign: "center" }}>
-            <a href="#HomePage" style={{ textAlign: "center" }}>
+            <a href="/#HomePage" style={{ textAlign: "center" }}>
               {" "}
               <ListItemText
                 sx={{ textAlign: "center", color: "#fff" }}
@@ -68,7 +68,7 @@ function Navbar(props) {
         </ListItem>
         <ListItem disablePadding>
           <ListItemButton sx={{ textAlign: "center" }}>
-            <a href="#AboutPage">
+            <a href="/#AboutPage">
               {" "}
               <ListItemText
                 sx={{ textAlign: "center", color: "#fff" }}
@@ -79,7 +79,7 @@ function Navbar(props) {
         </ListItem>
         <ListItem disablePadding>
           <ListItemButton sx={{ textAlign: "center" }}>
-            <a href="#ContactPage">
+            <a href="/#ContactPage">
               {" "}
               <ListItemText
                 sx={{ textAlign: "center", color: "#fff" }}
@@ -135,18 +135,15 @@ function Navbar(props) {
             </NavLink>
           </Typography>
           <Box sx={{ display: { xs: "none", sm: "block" } }}>
-            <a href="/#HomePage" sx={{ color: "#fff", textDecoration: "none" }}>
+            <a href="#HomePage" sx={{ color: "#fff", textDecoration: "none" }}>
               <Button sx={{ color: "white" }}>Home</Button>
             </a>
 
-            <a
-              href="/#AboutPage"
-              sx={{ color: "#fff", textDecoration: "none" }}
-            >
+            <a href="#AboutPage" sx={{ color: "#fff", textDecoration: "none" }}>
               <Button sx={{ color: "white" }}>About</Button>
             </a>
             <a
-              href="/#ContactPage"
+              href="#ContactPage"
               sx={{ color: "#fff", textDecoration: "none" }}
             >
               <Button sx={{ color: "white" }}>Contact</Button>

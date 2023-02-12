@@ -1,24 +1,22 @@
-import React from "react";
-import "../Form.css";
-import { NavLink } from "react-router-dom";
+import React, { useState, useEffect } from "react";
+import { NavLink, useNavigate } from "react-router-dom";
 import LockIcon from "@mui/icons-material/Lock";
 import axios from "axios";
-import { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import "../Form.css";
 
 const Login = ({ setLoginUser }) => {
   const navigate = useNavigate();
   const [user, setUser] = useState({
-    name: "",
+    email: "",
     password: "",
   });
 
   const handleChange = (e) => {
     const { name, value } = e.target;
-    setUser({
-      ...user,
+    setUser((prevState) => ({
+      ...prevState,
       [name]: value,
-    });
+    }));
   };
 
   const login = () => {
@@ -28,6 +26,10 @@ const Login = ({ setLoginUser }) => {
       navigate("/");
     });
   };
+
+  useEffect(() => {
+    document.title = "Login";
+  }, []);
 
   return (
     <div
@@ -68,17 +70,12 @@ const Login = ({ setLoginUser }) => {
           />
         </div>
         <div className="btn">
-          <NavLink to="/login">
-            {" "}
-            <button className="button1" onClick={login}>
-              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Login&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            </button>{" "}
-          </NavLink>
+          <button className="button1" onClick={login}>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Login&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          </button>{" "}
           <NavLink to="/signup">
             {" "}
-            <button className="button2" onClick={navigate("/signup")}>
-              Sign Up
-            </button>
+            <button className="button2">Sign Up</button>
           </NavLink>
         </div>
         <button className="button3">Forgot Password</button>

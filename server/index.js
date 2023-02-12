@@ -10,7 +10,7 @@ app.use(express.urlencoded());
 app.use(cors());
 
 mongoose.connect(
-  "mongodb+srv://SumirVats:sumir123@medicinealarm.zwsvxz4.mongodb.net/test?retryWrites=true&w=majority",
+  "mongodb+srv://SumirVats:sumir123@medicinealarm.zwsvxz4.mongodb.net/",
   {
     useNewUrlParser: true,
     useUnifiedTopology: true,

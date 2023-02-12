@@ -15,35 +15,35 @@ const SIgnUp = () => {
     phone: "",
     address: "",
   });
-  const [mailId, setMailID] = useState("");
-  const [name, setName] = useState("");
-  const [phoneNumber, setPhoneNumber] = useState("");
-  const [address, setAddress] = useState("");
-  const [psswrd, setpsswrd] = useState("");
-  const handleChange = (event) => {
-    if (event.target.id === "email-input") {
-      setMailID(event.target.value);
-    } else if (event.target.id === "name-input") {
-      setName(event.target.value);
-    } else if (event.target.id === "phone-input") {
-      setPhoneNumber(event.target.value);
-    } else if (event.target.id === "Address-input") {
-      setAddress(event.target.value);
-    } else if (event.target.id === "password-input") {
-      setpsswrd(event.target.value);
-    }
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setUser((prevUser) => ({
+      ...prevUser,
+      [name]: value,
+    }));
   };
 
-  const register = () => {
+  const register = (e) => {
+    e.preventDefault();
     const { name, email, password, phone, address } = user;
-    if (name && email && password && phone && address) {
-      axios
-        .post("http://localhost:6969/signup", user)
-        .then((res) => console.log(res));
+    if (name && email && password) {
+      const userData = { name, email, password, phone, address };
+      axios.post("http://localhost:6969/signup", userData)
+        .then((res) => {
+          console.log(res);
+          alert("Successfully registered");
+        })
+        .catch((err) => {
+          console.error(err);
+          alert("Error occurred while registering");
+        });
     } else {
-      alert("invalid input");
+      alert("Please fill in all required fields");
     }
   };
+  
+
   return (
     <div
       style={{
@@ -57,7 +57,7 @@ const SIgnUp = () => {
         justifyContent: "center",
       }}
     >
-      <form className="Login-form">
+      <form className="Login-form" onSubmit={register}>
         <p id="heading">Sign Up</p>
         <div className="field">
           @
@@ -66,9 +66,9 @@ const SIgnUp = () => {
             placeholder="Email"
             className="input-field"
             type="email"
-            id="email-input"
-            value={mailId}
+            value={user.email}
             onChange={handleChange}
+            name="email"
           />
         </div>
         <div className="field">
@@ -77,9 +77,9 @@ const SIgnUp = () => {
             placeholder="Name"
             className="input-field"
             type="text"
-            id="name-input"
-            value={name}
+            value={user.name}
             onChange={handleChange}
+            name="name"
           />
         </div>
         <div className="field">
@@ -88,9 +88,9 @@ const SIgnUp = () => {
             placeholder="Phone"
             className="input-field"
             type="text"
-            id="phone-input"
-            value={phoneNumber}
+            value={user.phone}
             onChange={handleChange}
+            name="phone"
           />
         </div>
         <div className="field">
@@ -99,20 +99,20 @@ const SIgnUp = () => {
             placeholder="Address"
             className="input-field"
             type="text"
-            id="Address-input"
-            value={address}
+            value={user.address}
             onChange={handleChange}
+            name="address"
           />
         </div>
         <div className="field">
-          <FmdGoodIcon />
+          <LockIcon />
           <input
             placeholder="Password"
             className="input-field"
-            type="text"
-            id="password-input"
-            value={psswrd}
+            type="password"
+            value={user.password}
             onChange={handleChange}
+            name="password"
           />
         </div>
         <div className="btn">
@@ -124,7 +124,7 @@ const SIgnUp = () => {
           </Link>
           <Link to="/signup">
             {" "}
-            <button className="button2" onClick={register}>
+            <button className="button2" type="submit" onClick={register}>
               Sign Up
             </button>
           </Link>
