@@ -14,7 +14,8 @@ function App() {
     <div className="App">
       <Navbar />
       <Routes>
-        <Route path="/" element={user && user._id ? <Home /> : <Login />} />
+        {/* <Route path="/" element={user && user._id ? <Home /> : <Login />} /> */}
+        <Route path="/" element={<Home />} />
         <Route path="/login" element={<Login setLoginUser={setLoginUser} />} />
         <Route path="/signup" element={<SIgnUp />} />
         <Route path="*" element={<NoPage />} />
